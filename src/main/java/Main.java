@@ -31,10 +31,11 @@ public class Main {
         return staff;
     }
 
-    public static String listToJson(List<Employee> list){
+    public static String listToJson(List<Employee> list) {
         GsonBuilder builder = new GsonBuilder();
         Gson gson = builder.create();
-        Type listType = new TypeToken<List<Employee>>() {}.getType();
+        Type listType = new TypeToken<List<Employee>>() {
+        }.getType();
         String json = gson.toJson(list, listType);
         return json;
     }
@@ -44,12 +45,12 @@ public class Main {
             writer.write(str);
             writer.append("\n");
             writer.flush();
-        }catch (IOException e) {
+        } catch (IOException e) {
             System.out.println(e.getMessage());
         }
     }
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
 
         String[] columnMapping = {"id", "firstName", "lastName", "country", "age"};
         String fileName = "data.csv";
